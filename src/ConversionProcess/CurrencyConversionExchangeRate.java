@@ -1,6 +1,6 @@
 package ConversionProcess;
 
-public record CurrencyConversionExchangeRate(String base_code,
+public record CurrencyConversionExchangeRate  (String base_code,
                                              String target_code,
                                              double conversion_rate,
                                              double conversion_result) {
@@ -8,9 +8,10 @@ public record CurrencyConversionExchangeRate(String base_code,
     @Override
     public String toString() {
         return "Conversión\n" +
-                "De: " + base_code +
+                "De: " + base_code + " - " +
                 conversion_rate +
-                ", a:" + target_code +
+                ", a: " + target_code + " - " +
                 conversion_result;
+
     }
 }
