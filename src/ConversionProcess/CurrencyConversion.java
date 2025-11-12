@@ -8,9 +8,9 @@ import java.net.http.HttpResponse;
 
 public class CurrencyConversion {
 
-    public void conversion (int baseCurrency, int fateCurrency) {
+    public void conversion (int baseCurrency, int fateCurrency, int amount) {
 
-        URI direccion = URI.create("https://v6.exchangerate-api.com/v6/bfe0c0fe009597bfd96e127f/pair/" + baseCurrency + "/" + fateCurrency);
+        URI direccion = URI.create("https://v6.exchangerate-api.com/v6/bfe0c0fe009597bfd96e127f/pair/" + baseCurrency + "/" + fateCurrency+"/"+amount);
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(direccion).GET().build();
 
