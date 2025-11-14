@@ -13,6 +13,15 @@ public class MainRun {
 
         Scanner write = new Scanner(System.in);
 
+        System.out.println("\n******************************** MENU ********************************\n");
+
+        System.out.println(" 1) Consultar monedas disponibles para convertir");
+        System.out.println(" 2) Hacer conversiónes populares");
+        System.out.println(" 3) Realizar una consulta personalizada");
+        System.out.println(" 4) Consultar Historia");
+
+        System.out.println("\n*********************************************************************\n");
+
         /*CurrencyConversion consulta = new CurrencyConversion();
 
         System.out.println("Escriba la cantidad que desea convertir");
@@ -31,7 +40,7 @@ public class MainRun {
         ConversionBase converson = new ConversionBase();
         converson.conversionBase();
 
-        CurrencyCodes codigos = new CurrencyCodes();
-        codigos.codes();
+        //CurrencyCodes codigos = new CurrencyCodes();
+        //codigos.codes();
     }
 }
