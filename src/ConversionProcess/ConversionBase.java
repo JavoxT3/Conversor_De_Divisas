@@ -1,5 +1,7 @@
 package ConversionProcess;
 
+import Desing.Spacing;
+import Root.RootSystem;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -16,14 +18,13 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Scanner;
 
-public class ConversionBase {
+public class ConversionBase extends Spacing {
 
-    public static void separador() {
-        System.out.println("\n========================================\n");
-    }
     public static void menu () {
         System.out.println("\n******************************** MENU ********************************\n");
 
+        System.out.println("Escoja la opción de la conversión: \n");
+        System.out.println("0) Volver");
         System.out.println("1) Dólar =>> Peso argentino");
         System.out.println("2) Peso argentino =>> Dólar");
         System.out.println("3) Dólar =>> Real brasileño");
@@ -33,12 +34,10 @@ public class ConversionBase {
         System.out.println("7) Dólar =>> Peso boliviano");
         System.out.println("8) Peso boliviano =>> Dólar");
         System.out.println("9) Dólar =>> Peso chileno");
-        System.out.println("10)Peso chileno  =>> Dólar");
+        System.out.println("10) Peso chileno  =>> Dólar");
 
-        System.out.println("7) Histórico de Conversões");
-        System.out.println("0) SAIR");
         System.out.println("\n*********************************************************************\n");
-        System.out.println("Por favor, elija una opción valida: ");
+        System.out.println("Por favor elija una opción correcta");
     }
 
     String one = "Dólar a Peso argentino.";
@@ -78,23 +77,25 @@ public class ConversionBase {
             menu();
 
             Scanner option = new Scanner(System.in);
-            separador();
+            spacing();;
             System.out.print("Opción: ");
             int number = option.nextInt();
-            separador();
+            spacing();;
 
 
             while (number < 0 || number > 10) {
                 System.out.println("Opción no valida");
                 menu();
-                separador();
+                spacing();;
                 System.out.print("Opción: ");
                 number = option.nextInt();
-                separador();
+                spacing();;
             }
 
             if (number == 0) {
-                break;
+                    option.close();
+                    RootSystem main = new RootSystem();
+                    main.system();
             }
 
             System.out.print("Ingrese el monto de dinero que quiere convertir de ");
@@ -132,7 +133,7 @@ public class ConversionBase {
                     break;
             }
 
-            separador();
+            spacing();;
             System.out.print("Monto: ");
             double amount = option.nextDouble();
 
@@ -192,49 +193,43 @@ public class ConversionBase {
                     fateCurrency = "USD";
                     break;
             }
-            separador();
+            spacing();;
             System.out.printf("Valor %.2f [%s] equivale a =>>> %.2f [%s]\n",
                     amount, baseCurrency, result, fateCurrency);
-            separador();
+            spacing();;
 
-            System.out.println("¿Desea hacer otra converción? Si = 1 / No = 2");
-            separador();
+            System.out.println("¿Desea hacer otra converción? Si = 1 / No, volver = 0");
+            spacing();;
 
             System.out.print("Opción: ");
             int keep  = option.nextInt();
 
             while (keep < 0 || keep > 2) {
 
-                separador();
+                spacing();;
                 System.out.println("Ingrese un valor valido.");
 
-                separador();
+                spacing();;
 
-                System.out.println("¿Desea hacer otra converción? Si = 1 / No = 2");
+                System.out.println("¿Desea hacer otra converción? Si = 1 / No, volver = 2");
 
-                separador();
+                spacing();;
 
                 System.out.print("Opción: ");
                 keep  = option.nextInt();
 
             }
 
-            separador();
+            spacing();;
 
             if (keep == 1) {
 
-            } else if (keep == 2) {
-                break;
             } else {
-                System.out.println("Ingrese un valor valido.");
+                RootSystem main = new RootSystem();
+                main.system();
             }
 
 
-
         }
-
-        System.out.println("Finalizando programa");
-        separador();
-
     }
 }

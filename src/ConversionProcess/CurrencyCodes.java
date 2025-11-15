@@ -1,20 +1,24 @@
 package ConversionProcess;
 
+import Desing.Spacing;
+import Root.RootSystem;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.internal.bind.util.ISO8601Utils;
 
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Scanner;
 
-public class CurrencyCodes {
+public class CurrencyCodes extends Spacing {
 
-    public void codes() throws IOException, InterruptedException {
+    public void codes () throws IOException, InterruptedException {
+
+        Scanner writing = new Scanner(System.in);
 
         URI direction = URI.create("https://v6.exchangerate-api.com/v6/bfe0c0fe009597bfd96e127f/codes");
 
@@ -35,5 +39,27 @@ public class CurrencyCodes {
             String name = currencyPair.get(1).getAsString();
             System.out.println(code + " - " + name);
         }
+        spacing();
+
+        System.out.println("Escriba 1 para volver al menu principal");
+
+        spacing();
+
+        System.out.print("Opción: ");
+        int option = writing.nextInt();
+
+
+        while (option != 1) {
+            spacing();
+            System.out.println("Elija la opción disponible por favor");
+            spacing();
+            System.out.println("Escriba 1 para volver al menu principal");
+            spacing();
+            System.out.print("Opción: ");
+            option = writing.nextInt();
+            spacing();
+        }
+            RootSystem main = new RootSystem();
+            main.system();
     }
 }
