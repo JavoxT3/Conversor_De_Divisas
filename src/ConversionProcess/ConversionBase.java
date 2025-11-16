@@ -21,7 +21,7 @@ import java.util.Scanner;
 public class ConversionBase extends Spacing {
 
     public static void menu () {
-        System.out.println("\n******************************** MENU ********************************\n");
+        System.out.println("\n****************************************************************\n");
 
         System.out.println("Escoja la opción de la conversión: \n");
         System.out.println("0) Volver");
@@ -193,9 +193,11 @@ public class ConversionBase extends Spacing {
                     fateCurrency = "USD";
                     break;
             }
-            spacing();;
-            System.out.printf("Valor %.2f [%s] equivale a =>>> %.2f [%s]\n",
-                    amount, baseCurrency, result, fateCurrency);
+            spacing();
+
+
+            System.out.printf("Valor: %.2f [%s]\n[%s] → [%s] = %.2f\n",
+                    amount, baseCurrency, baseCurrency, fateCurrency, result);
             spacing();;
 
             System.out.println("¿Desea hacer otra converción? Si = 1 / No, volver = 0");
@@ -217,10 +219,9 @@ public class ConversionBase extends Spacing {
 
                 System.out.print("Opción: ");
                 keep  = option.nextInt();
+                option.nextLine();
 
             }
-
-            spacing();;
 
             if (keep == 1) {
 
