@@ -46,18 +46,31 @@ public class CurrencyCodes extends Spacing {
         spacing();
 
         System.out.print("Opción: ");
-        int option = writing.nextInt();
+        int option;
 
+        while (true) {
+            if (writing.hasNextInt()) {
 
-        while (option != 1) {
-            spacing();
-            System.out.println("Elija la opción disponible por favor");
-            spacing();
-            System.out.println("Escriba 1 para volver al menu principal");
-            spacing();
-            System.out.print("Opción: ");
-            option = writing.nextInt();
-            spacing();
+                option = writing.nextInt();
+                if (option == 1) {
+                    break;
+                } else {
+                    spacing();
+                    System.out.println("Elija la opción disponible por favor");
+                    spacing();
+                    System.out.println("Escriba 1 para volver al menu principal1");
+                    spacing();
+                    System.out.print("Opción: ");
+                }
+            } else {
+                spacing();
+                System.out.println("Valor inválido. Escriba solo números por favor");
+                spacing();
+                System.out.println("Escriba 1 para volver al menu principal2");
+                spacing();
+                System.out.print("Opción: ");
+                writing.next();
+            }
         }
             RootSystem main = new RootSystem();
             main.system();

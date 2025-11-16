@@ -79,25 +79,36 @@ public class ConversionBase extends Spacing {
             Scanner option = new Scanner(System.in);
             spacing();;
             System.out.print("Opción: ");
-            int number = option.nextInt();
-            spacing();;
+            int number;
 
+            while (true) {
+                if (option.hasNextInt()) {
+                    number = option.nextInt();
+                    if (number >= 0 && number <= 10) {
+                        break;
+                    } else {
+                        spacing();
+                        System.out.println("Opción no valida");
+                        menu();
+                        spacing();
+                        System.out.print("Opción: ");
 
-            while (number < 0 || number > 10) {
-                System.out.println("Opción no valida");
-                menu();
-                spacing();;
-                System.out.print("Opción: ");
-                number = option.nextInt();
-                spacing();;
+                    }
+                } else {
+                    spacing();
+                    System.out.println("Valor inválido. Escriba solo números por favor");
+                    spacing();
+                    System.out.print("Opción: ");
+                    option.next();
+                }
             }
 
             if (number == 0) {
-                    option.close();
-                    RootSystem main = new RootSystem();
-                    main.system();
-            }
+                RootSystem main = new RootSystem();
+                main.system();
 
+            }
+            spacing();
             System.out.print("Ingrese el monto de dinero que quiere convertir de ");
 
             switch (number) {
@@ -135,7 +146,27 @@ public class ConversionBase extends Spacing {
 
             spacing();;
             System.out.print("Monto: ");
-            double amount = option.nextDouble();
+            double amount;
+
+            while (true) {
+                if (option.hasNextInt()) {
+                    amount = option.nextDouble();
+                    if (amount > 0) {
+                        break;
+                    } else {
+                        spacing();
+                        System.out.println("Por favor, ingrese una cantidad correcta");
+                        spacing();
+                        System.out.print("Monto: ");
+                    }
+                } else {
+                    spacing();
+                    System.out.println("Valor inválido. Escriba solo números por favor");
+                    spacing();
+                    System.out.print("Opción: ");
+                    option.next();
+                }
+            }
 
             double result = 0;
             String baseCurrency = "";
@@ -196,41 +227,45 @@ public class ConversionBase extends Spacing {
             spacing();
 
 
-            System.out.printf("Valor: %.2f [%s]\n[%s] → [%s] = %.2f\n",
+            var process = System.out.printf("Valor: %.2f [%s]\n[%s] → [%s] = %.2f\n",
                     amount, baseCurrency, baseCurrency, fateCurrency, result);
+
+            History history = new History();
+            history.setHistorial(process.toString());
+
             spacing();;
 
-            System.out.println("¿Desea hacer otra converción? Si = 1 / No, volver = 0");
+            System.out.println("¿Desea hacer otra converción? Si = 1 / No, volver = 2");
             spacing();;
 
             System.out.print("Opción: ");
-            int keep  = option.nextInt();
+            int keep;
 
-            while (keep < 0 || keep > 2) {
+            while (true) {
 
-                spacing();;
-                System.out.println("Ingrese un valor valido.");
-
-                spacing();;
-
-                System.out.println("¿Desea hacer otra converción? Si = 1 / No, volver = 2");
-
-                spacing();;
-
-                System.out.print("Opción: ");
-                keep  = option.nextInt();
-                option.nextLine();
-
+                if (option.hasNextInt()) {
+                    keep = option.nextInt();
+                    if (keep == 1) {
+                        break;
+                    } else if (keep == 2) {
+                        RootSystem main = new RootSystem();
+                        main.system();
+                    } else {
+                        spacing();
+                        System.out.println("Opción no valida");
+                        spacing();
+                        System.out.println("¿Desea hacer otra converción? Si = 1 / No, volver = 2");
+                        spacing();
+                        System.out.print("Opción: ");
+                    }
+                } else {
+                    spacing();
+                    System.out.println("Valor inválido. Escriba solo números por favor");
+                    spacing();
+                    System.out.print("Opción: ");
+                    option.next();
+                }
             }
-
-            if (keep == 1) {
-
-            } else {
-                RootSystem main = new RootSystem();
-                main.system();
-            }
-
-
         }
     }
 }
