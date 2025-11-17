@@ -58,7 +58,10 @@ La clase MainRun inicializa el historial y carga el menú principal.
 El usuario puede seleccionar entre:
 
 
+
 <img width="726" height="535" alt="Captura de pantalla 2025-11-17 013340" src="https://github.com/user-attachments/assets/98384543-05f1-4b18-85c7-8f0ca269bf0c" />
+
+
 
 
 🔹 3. Conversión
@@ -85,7 +88,10 @@ Y se almacena en el historial.
 
 📘 Ejemplo de salida
 
+
 <img width="624" height="417" alt="Captura de pantalla 2025-11-17 013631" src="https://github.com/user-attachments/assets/66d3e3e2-3c69-4e8a-83fe-d68ffead6333" />
+
+
  
 📜 Instalación y ejecución
 1️⃣ Clonar repositorio
@@ -106,7 +112,10 @@ MainRun.java
 
 Se muestran como:
 
+
 <img width="437" height="276" alt="Captura de pantalla 2025-11-17 013946" src="https://github.com/user-attachments/assets/459db1fe-d783-4573-9101-785407390262" />
+
+
 
 👨‍💻 Autor
 
