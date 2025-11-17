@@ -131,3 +131,7 @@ https://v6.exchangerate-api.com/v6/{API_KEY}/pair/{base}/{target}/{amount}
 - Validación y control de flujo
 
 Formateo numérico y output limpio
+
+# 📬 Contáctame
+
+LinkedIn: https://www.linkedin.com/in/jhonatan-montiel/
