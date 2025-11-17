@@ -1,4 +1,4 @@
-📌 Conversor de divisas – Java App
+📌 CONVERSOR DE DIVISAS – Java App
 
 Aplicación de consola en Java que permite consultar códigos de monedas, realizar conversiones populares o personalizadas, y guardar un historial de conversiones usando una API externa de tasas de cambio.
 
