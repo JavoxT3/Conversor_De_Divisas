@@ -84,6 +84,7 @@ Resultado final
 Y se almacena en el historial.
 
 📘 Ejemplo de salida
+
 <img width="624" height="417" alt="Captura de pantalla 2025-11-17 013631" src="https://github.com/user-attachments/assets/66d3e3e2-3c69-4e8a-83fe-d68ffead6333" />
  
 📜 Instalación y ejecución
